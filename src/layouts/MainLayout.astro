@@ -25,11 +25,14 @@ const { title, meta } = Astro.props;
     {meta?.map(({ name, content }) => <meta name={name} content={content} />)}
     <title>{title}</title>
   </head>
-  <body>
+  <body class="flex flex-col h-full">
     <main class="w-full max-w-7xl mx-auto relative">
-      <VHSStripes />
+      <VHSStripes classes="h-5" />
       <slot />
     </main>
+    <footer class="flex-grow">
+      <VHSStripes classes="flex-grow h-full" />
+    </footer>
   </body>
 </html>
 
