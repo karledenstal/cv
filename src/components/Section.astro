@@ -1,12 +1,18 @@
 ---
 type Props = {
-  title: string
-}
+  title: string;
+  emoji: string;
+};
 
-const { title } = Astro.props;
+const { title, emoji } = Astro.props;
 ---
 
-<h2 class="text-indigo-300 font-cubano text-7xl mb-10">{title}</h2>
-<div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+<h2
+  class="text-indigo-300 font-cubano text-7xl mb-10 flex justify-between items-center"
+>
+  {title}
+  <span>{emoji}</span>
+</h2>
+<div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 mb-16">
   <slot />
 </div>
