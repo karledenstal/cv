@@ -1,6 +1,4 @@
 ---
-import VHSStripes from "../components/VHSStripes.astro";
-
 export type Props = {
   title: string;
   meta?: {
@@ -25,27 +23,39 @@ const { title, meta } = Astro.props;
     {meta?.map(({ name, content }) => <meta name={name} content={content} />)}
     <title>{title}</title>
   </head>
-  <body class="flex flex-col h-full">
-    <main class="w-full max-w-7xl mx-auto relative">
-      <VHSStripes classes="h-5" />
+  <body>
+    <main class="p-10 w-full max-w-6xl mx-auto relative mt-4">
       <slot />
     </main>
-    <footer class="flex-grow">
-      <VHSStripes classes="flex-grow h-full" />
-    </footer>
   </body>
 </html>
 
 <style is:global>
   @font-face {
-    font-family: "OggRoman";
-    src: url("/fonts/Ogg-Roman.woff") format("woff");
+    font-family: "Cubano";
+    src: url("/fonts/cubano-webfont.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
+  html, body {
+    height: 100%;
+  }
+
   body {
-    @apply bg-fixed bg-cover bg-amber-100 font-quicksand;
+    @apply font-quicksand bg-indigo-950;
+    /* background-image: linear-gradient(
+      to right,
+      rgb(79 70 229) 0%,
+      rgb(79 70 229) 33.33%,
+      rgb(239 68 68) 0,
+      rgb(239 68 68) 66.66%,
+      rgb(245 158 11) 0
+    );
+    background-size: 480px;
+    background-repeat: no-repeat;
+    background-position: center; */
+    margin: 0;
   }
 </style>

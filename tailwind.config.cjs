@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				'ogg': "OggRoman, serif",
+				'cubano': "Cubano, serif",
 				'quicksand': "Quicksand, sans-serif",
 			}
 		},
